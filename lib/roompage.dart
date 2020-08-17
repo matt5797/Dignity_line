@@ -181,7 +181,7 @@ class _RoomPageState extends State<RoomPage> {
                                     ]),
                                 Positioned(
                                   bottom: real_height*0.15,
-                                    left: real_width*0.15,
+                                    left: real_width*0.05,
                                     child: Container(
                                       //margin: EdgeInsets.fromLTRB(100, 300, 0, 0),
                                       child: Image.asset(
@@ -228,113 +228,6 @@ class _RoomPageState extends State<RoomPage> {
                                     ),
                                   ),
                                 ),
-
-                                /*
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: <Widget>[
-                                    RotationTransition(
-                                      turns: AlwaysStoppedAnimation(5 / 360),
-                                      child: Container(
-                                        margin: EdgeInsets.fromLTRB(
-                                            0, 0, 0, real_height * 0.05),
-                                        height: real_height * 0.25 * 1.35,
-                                        width: real_height * 0.25,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  'assets/images/remocon.png'),
-                                              fit: BoxFit.fitWidth),
-                                        ),
-                                        child: Column(
-                                          children: <Widget>[
-                                            Container(
-                                              margin: EdgeInsets.fromLTRB(
-                                                  0,
-                                                  real_height * 0.065,
-                                                  0,
-                                                  real_height * 0.015),
-                                              child: Text('${widget.d.dignity}',
-                                                  style: TextStyle(
-                                                      fontSize: real_height * 0.08,
-                                                      fontWeight: FontWeight.bold,
-                                                      color: Color(0xFFFFFFFF))),
-                                            ),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: <Widget>[
-                                                InkWell(
-                                                  child: Image.asset(
-                                                    'assets/images/up_icon.png',
-                                                    height: real_height * 0.08,
-                                                    fit: BoxFit.fitHeight,
-                                                  ),
-                                                  onTap: () {
-                                                    setState(() {
-                                                      if (widget.d.discomfort ==
-                                                          2) {
-                                                        if (widget.d.dignity >=
-                                                            38) {
-                                                          widget.d.dignity = 38;
-                                                        } else {
-                                                          widget.d.dignity += 0.5;
-                                                        }
-                                                      } else {
-                                                        if (widget.d.dignity >=
-                                                            88) {
-                                                          widget.d.dignity = 88;
-                                                        } else {
-                                                          widget.d.dignity += 0.5;
-                                                        }
-                                                      }
-                                                      DBHelper()
-                                                          .calc_tax(widget.d);
-                                                      set_man_state();
-                                                    });
-                                                  },
-                                                ),
-                                                InkWell(
-                                                  child: Image.asset(
-                                                    'assets/images/down_icon.png',
-                                                    height: real_height * 0.08,
-                                                    fit: BoxFit.fitHeight,
-                                                  ),
-                                                  onTap: () {
-                                                    setState(() {
-                                                      if (widget.d.discomfort ==
-                                                          2) {
-                                                        if (widget.d.dignity <=
-                                                            13) {
-                                                          widget.d.dignity = 13;
-                                                        } else {
-                                                          widget.d.dignity -= 0.5;
-                                                        }
-                                                      } else {
-                                                        if (widget.d.dignity <=
-                                                            63) {
-                                                          widget.d.dignity = 63;
-                                                        } else {
-                                                          widget.d.dignity -= 0.5;
-                                                        }
-                                                      }
-                                                      DBHelper()
-                                                          .calc_tax(widget.d);
-                                                      set_man_state();
-                                                    });
-                                                  },
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-
-                                 */
-
                                 Column(
                                   children: <Widget>[
                                     FutureBuilder(
@@ -461,7 +354,7 @@ class _RoomPageState extends State<RoomPage> {
                                         opacity: 0,
                                         child: Container(
                                           alignment: Alignment.bottomRight,
-                                          width: real_width * 0.25,
+                                          width: real_width * 1,
                                           height: real_height,
                                           color: Colors.red,
                                         ),

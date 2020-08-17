@@ -671,17 +671,17 @@ class _ResultPageState extends State<ResultPage> {
                                                 fontSize: 15,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
-                                        Text('기존 요금: ${snapshot.data[0].floor()} 원',
+                                        Text('기존 요금: ${currency.format(snapshot.data[0].floor())} 원',
                                             style: TextStyle(
                                                 fontSize: 15,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
-                                        Text('추가 요금: ${snapshot.data[1].floor()} 원',
+                                        Text('추가 요금: ${currency.format(snapshot.data[1].floor())} 원',
                                             style: TextStyle(
                                                 fontSize: 15,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
-                                        Text('합계 요금: ${snapshot.data[2].floor()} 원',
+                                        Text('합계 요금: ${currency.format(snapshot.data[2].floor())} 원',
                                             style: TextStyle(
                                                 fontSize: 15,
                                                 color: Color(0xFF81420A)),
