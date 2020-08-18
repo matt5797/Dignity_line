@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/widgets.dart';
@@ -62,10 +63,113 @@ class _ResultPageState extends State<ResultPage> {
         body: SafeArea(
             child: Center(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(15, 15, 15, 100),
+            padding: const EdgeInsets.fromLTRB(15, 15, 15, 90),
             child: ListView(
               children: <Widget>[
+                FutureBuilder(
+                    future: DBHelper().total_result(widget.d),
+                    builder: (BuildContext context, AsyncSnapshot snapshot) {
+                      if (snapshot.hasData == false) {
+                        return CircularProgressIndicator();
+                      } else {
+                        return GridView.count(
+                          mainAxisSpacing: 5,
+                          crossAxisSpacing: 5,
+                          crossAxisCount: 2,
+                          padding: EdgeInsets.all(15),
+                          physics: ScrollPhysics(),
+                          shrinkWrap: true,
+                          children: <Widget>[
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                      '${spot_dic[widget.d.spot]}',
+                                      style: TextStyle(
+                                          fontSize: 30,
+                                          color: Color(0xFF81420A)),
+                                      textAlign: TextAlign.center),
+                                  Text(
+                                      '지점',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: Color(0xFF81420A)),
+                                      textAlign: TextAlign.center),
+                                ],
+                              ),
+                            ),
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                      '${DateFormat.yMMMMd("ko_KO").format(widget.d.datetime)} \n~\n ${DateFormat.yMMMMd("ko_KO").format(widget.d.datetime.add(Duration(days: get_duration())))}',
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          color: Color(0xFF81420A)),
+                                      textAlign: TextAlign.center),
+                                  Text(
+                                      '날짜 범위',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: Color(0xFF81420A)),
+                                      textAlign: TextAlign.center),
+                                ],
+                              ),
+                            ),
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                      '${widget.d.discomfort == 1 ? "불쾌지수" : "기온"}',
+                                      style: TextStyle(
+                                          fontSize: 30,
+                                          color: Color(0xFF81420A)),
+                                      textAlign: TextAlign.center),
+                                  Text(
+                                      '지표',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: Color(0xFF81420A)),
+                                      textAlign: TextAlign.center),
+                                ],
+                              ),
+                            ),
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                      '${widget.d.dignity} ${widget.d.discomfort == 1 ? "DI" : "°C"}',
+                                      style: TextStyle(
+                                          fontSize: 30,
+                                          color: Color(0xFF81420A)),
+                                      textAlign: TextAlign.center),
+                                  Text(
+                                      '기준선',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: Color(0xFF81420A)),
+                                      textAlign: TextAlign.center),
+                                ],
+                              ),
+                            ),
+                          ],
+                        );
+                      }
+                    }),
                 Card(
+                  margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
                   elevation: 5,
@@ -215,7 +319,7 @@ class _ResultPageState extends State<ResultPage> {
                         return CircularProgressIndicator();
                       } else {
                         return Card(
-                          margin: EdgeInsets.fromLTRB(0, 40, 0, 0),
+                          margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
                           elevation: 5,
@@ -386,7 +490,7 @@ class _ResultPageState extends State<ResultPage> {
                         return CircularProgressIndicator();
                       } else {
                         return Card(
-                          margin: EdgeInsets.fromLTRB(0, 40, 0, 0),
+                          margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
                           color: Color(0xFFFFF9F1),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
@@ -571,115 +675,6 @@ class _ResultPageState extends State<ResultPage> {
                               ),
                             ],
                           ),
-                        );
-                      }
-                    }),
-                FutureBuilder(
-                    future: DBHelper().total_result(widget.d),
-                    builder: (BuildContext context, AsyncSnapshot snapshot) {
-                      if (snapshot.hasData == false) {
-                        return CircularProgressIndicator();
-                      } else {
-                        return Card(
-                            margin: EdgeInsets.fromLTRB(0, 40, 0, 0),
-                            color: Color(0xFFFFF9F1),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20)),
-                            elevation: 5,
-                            child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: <Widget>[
-                                  Card(
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                        BorderRadius.circular(20)),
-                                    elevation: 5,
-                                    color: Color(0xFFD4995E),
-                                    child: Text('종합',
-                                        style: TextStyle(
-                                            fontSize: 25,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                        textAlign: TextAlign.center),
-                                  ),
-                                  Card(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                          BorderRadius.circular(20)),
-                                      elevation: 5,
-                                      child: Column(children: <Widget>[
-                                        Text(
-                                            '기준 지점: ${spot_dic[widget.d.spot]}',
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Color(0xFF81420A)),
-                                            textAlign: TextAlign.center),
-                                        Text(
-                                            '기준 날짜: ${DateFormat.yMMMMd("ko_KO").format(widget.d.datetime)} \n ~ ${DateFormat.yMMMMd("ko_KO").format(widget.d.datetime.add(Duration(days: get_duration())))}',
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Color(0xFF81420A)),
-                                            textAlign: TextAlign.center),
-                                        Text(
-                                            '기준 지표: ${widget.d.discomfort == 1 ? "불쾌지수" : "기온"}',
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Color(0xFF81420A)),
-                                            textAlign: TextAlign.center),
-                                        Text(
-                                            '존엄선: ${widget.d.dignity} ${widget.d.discomfort == 1 ? "DI" : "°C"}',
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Color(0xFF81420A)),
-                                            textAlign: TextAlign.center),
-                                        Text('에어컨 냉방효율: ${widget.d.efficiency} W/W',
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Color(0xFF81420A)),
-                                            textAlign: TextAlign.center),
-                                        Text('에어컨 정격냉방능력: ${widget.d.capacity} W',
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Color(0xFF81420A)),
-                                            textAlign: TextAlign.center),
-                                        Text('대가족/생명유지 요금: ${welfare1_dic[widget.d.welfare1]}',
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Color(0xFF81420A)),
-                                            textAlign: TextAlign.center),
-                                        Text('복지할인요금: ${welfare2_dic[widget.d.welfare2]}',
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Color(0xFF81420A)),
-                                            textAlign: TextAlign.center),
-                                        Text('계약 종류: ${type_dic[widget.d.type]}',
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Color(0xFF81420A)),
-                                            textAlign: TextAlign.center),
-                                        Text('기존 사용량: ${widget.d.ex_elec} kWh',
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Color(0xFF81420A)),
-                                            textAlign: TextAlign.center),
-                                        Text('기존 요금: ${currency.format(snapshot.data[0].floor())} 원',
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Color(0xFF81420A)),
-                                            textAlign: TextAlign.center),
-                                        Text('추가 요금: ${currency.format(snapshot.data[1].floor())} 원',
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Color(0xFF81420A)),
-                                            textAlign: TextAlign.center),
-                                        Text('합계 요금: ${currency.format(snapshot.data[2].floor())} 원',
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Color(0xFF81420A)),
-                                            textAlign: TextAlign.center),
-                                      ])
-                                  ),
-                                ])
                         );
                       }
                     }),
