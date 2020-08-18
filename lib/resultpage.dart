@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'calcfunc.dart';
 import 'datas.dart';
 import 'package:intl/intl.dart';
+import 'helppage.dart';
 
 class ResultPage extends StatefulWidget {
   Datas d;
@@ -45,6 +46,19 @@ class _ResultPageState extends State<ResultPage> {
           backgroundColor: Color(0xFF946637),
         ),
         backgroundColor: Color(0xFFFFEFE1),
+        floatingActionButton: Container(
+          margin: EdgeInsets.fromLTRB(0, 0, 0, 80),
+          child: FloatingActionButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute<void>(builder: (BuildContext context) {
+                    return HelpPage();
+                  }));
+            },
+            child: Icon(Icons.help),
+            backgroundColor: Color(0xFFC99E71),
+          ),
+        ),
         body: SafeArea(
             child: Center(
           child: Padding(
@@ -597,93 +611,70 @@ class _ResultPageState extends State<ResultPage> {
                                         Text(
                                             '기준 지점: ${spot_dic[widget.d.spot]}',
                                             style: TextStyle(
-                                                fontSize: 15,
+                                                fontSize: 20,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
                                         Text(
-                                            '기준 날짜: ${DateFormat.yMMMMd("ko_KO").format(widget.d.datetime)} ~ ${DateFormat.yMMMMd("ko_KO").format(widget.d.datetime.add(Duration(days: get_duration())))}',
+                                            '기준 날짜: ${DateFormat.yMMMMd("ko_KO").format(widget.d.datetime)} \n ~ ${DateFormat.yMMMMd("ko_KO").format(widget.d.datetime.add(Duration(days: get_duration())))}',
                                             style: TextStyle(
-                                                fontSize: 15,
+                                                fontSize: 20,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
                                         Text(
                                             '기준 지표: ${widget.d.discomfort == 1 ? "불쾌지수" : "기온"}',
                                             style: TextStyle(
-                                                fontSize: 15,
+                                                fontSize: 20,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
                                         Text(
                                             '존엄선: ${widget.d.dignity} ${widget.d.discomfort == 1 ? "DI" : "°C"}',
                                             style: TextStyle(
-                                                fontSize: 15,
+                                                fontSize: 20,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
-                                      ])),
-                                  Card(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                          BorderRadius.circular(20)),
-                                      elevation: 5,
-                                      child: Column(children: <Widget>[
                                         Text('에어컨 냉방효율: ${widget.d.efficiency} W/W',
                                             style: TextStyle(
-                                                fontSize: 15,
+                                                fontSize: 20,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
                                         Text('에어컨 정격냉방능력: ${widget.d.capacity} W',
                                             style: TextStyle(
-                                                fontSize: 15,
+                                                fontSize: 20,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
-                                      ])
-                                  ),
-                                  Card(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                          BorderRadius.circular(20)),
-                                      elevation: 5,
-                                      child: Column(children: <Widget>[
                                         Text('대가족/생명유지 요금: ${welfare1_dic[widget.d.welfare1]}',
                                             style: TextStyle(
-                                                fontSize: 15,
+                                                fontSize: 20,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
                                         Text('복지할인요금: ${welfare2_dic[widget.d.welfare2]}',
                                             style: TextStyle(
-                                                fontSize: 15,
+                                                fontSize: 20,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
-                                      ])
-                                  ),
-                                  Card(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                          BorderRadius.circular(20)),
-                                      elevation: 5,
-                                      child: Column(children: <Widget>[
                                         Text('계약 종류: ${type_dic[widget.d.type]}',
                                             style: TextStyle(
-                                                fontSize: 15,
+                                                fontSize: 20,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
                                         Text('기존 사용량: ${widget.d.ex_elec} kWh',
                                             style: TextStyle(
-                                                fontSize: 15,
+                                                fontSize: 20,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
                                         Text('기존 요금: ${currency.format(snapshot.data[0].floor())} 원',
                                             style: TextStyle(
-                                                fontSize: 15,
+                                                fontSize: 20,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
                                         Text('추가 요금: ${currency.format(snapshot.data[1].floor())} 원',
                                             style: TextStyle(
-                                                fontSize: 15,
+                                                fontSize: 20,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
                                         Text('합계 요금: ${currency.format(snapshot.data[2].floor())} 원',
                                             style: TextStyle(
-                                                fontSize: 15,
+                                                fontSize: 20,
                                                 color: Color(0xFF81420A)),
                                             textAlign: TextAlign.center),
                                       ])

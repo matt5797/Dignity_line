@@ -21,7 +21,8 @@ class _HelpPageState extends State<HelpPage> {
         itemBuilder: (context, i) {
           return ExpansionTile(
             initiallyExpanded: false,
-            title: Text(vehicles[i].title, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),),
+            leading: Icon(Icons.help, color: Color(0xFF946637)),
+            title: Text(vehicles[i].title, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Color(0xFF946637)),),
             children: <Widget>[
               Column(
                 children: _buildExpandableContent(vehicles[i]),
