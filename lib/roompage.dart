@@ -14,7 +14,7 @@ class RoomPage extends StatefulWidget {
   _RoomPageState createState() => _RoomPageState();
 }
 
-class _RoomPageState extends State<RoomPage> {
+class _RoomPageState extends State<RoomPage> with SingleTickerProviderStateMixin{
   double real_height = 0.0;
   double real_width = 0.0;
   double full_height = 0.0;
@@ -23,6 +23,7 @@ class _RoomPageState extends State<RoomPage> {
   double _dragPercentage = 0;
   int man_state=0;
   int bg_state=0;
+
   List<String> bg_list = [
     'assets/images/bg1.png',
     'assets/images/bg2.png'
@@ -36,6 +37,11 @@ class _RoomPageState extends State<RoomPage> {
     'assets/images/man2.png',
     'assets/images/man3.png',
     'assets/images/man4.png',
+  ];
+  List<Color> color_list = [
+    Color(0xFFF73E3E),
+    Color(0xFF000000),
+    Color(0xFF0600F7),
   ];
 
   Future<List<double>> mediaQuerySize(BuildContext context) async {
@@ -279,15 +285,15 @@ class _RoomPageState extends State<RoomPage> {
                                                                     FontWeight
                                                                         .bold,
                                                                 color: Color(
-                                                                    0xFF000000))),
+                                                                    0xFF2B1300))),
                                                       ],
                                                     ),
                                                     Container(
                                                       width:
                                                           (new_price + ex_price) >
                                                                   1000000
-                                                              ? real_width * 0.55
-                                                              : real_width * 0.5,
+                                                              ? real_width * 0.6
+                                                              : real_width * 0.55,
                                                       child: Column(
                                                         crossAxisAlignment:
                                                             CrossAxisAlignment
@@ -305,7 +311,7 @@ class _RoomPageState extends State<RoomPage> {
                                                                       FontWeight
                                                                           .bold,
                                                                   color: Color(
-                                                                      0xFF000000))),
+                                                                      0xFF2B1300))),
                                                           Text(
                                                               '${currency.format(new_price)}',
                                                               textAlign:
@@ -318,7 +324,7 @@ class _RoomPageState extends State<RoomPage> {
                                                                       FontWeight
                                                                           .bold,
                                                                   color: Color(
-                                                                      0xFF000000))),
+                                                                      0xFF2B1300))),
                                                           Divider(
                                                               color:
                                                                   Colors.black),
@@ -332,7 +338,7 @@ class _RoomPageState extends State<RoomPage> {
                                                                       FontWeight
                                                                           .bold,
                                                                   color: Color(
-                                                                      0xFF000000))),
+                                                                      0xFF2B1300))),
                                                           //Text('${currency.format(snapshot.data)}'),
                                                           //Text('${currency.format(widget.d.ex_value)}'),
                                                         ],

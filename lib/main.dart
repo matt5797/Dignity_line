@@ -18,12 +18,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //광고 admob 적용
     FirebaseAdMob.instance
-        .initialize(appId: 'ca-app-pub-3940256099942544~3347511713');
+        .initialize(appId: 'ca-app-pub-6906871181988858~7575945029');
+    //ca-app-pub-6906871181988858~7575945029
+    //ca-app-pub-3940256099942544~3347511713 // test ID
     MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
       keywords: <String>['flutterio', 'beautiful apps'],
       contentUrl: 'https://flutter.io',
       childDirected: false,
-      testDevices: <String>[], // Android emulators are considered test devices
+      testDevices: <String>[
+        'C97158959CA68CCF26AD29B523315B64'
+      ], // Android emulators are considered test devices
     );
 
     BannerAd myBanner = BannerAd(
@@ -277,6 +281,7 @@ class _HomePageState extends State<HomePage> {
                                             keyboardType: TextInputType.number,
                                             controller: textFieldCtrl1,
                                             decoration: InputDecoration(
+                                              hintText: '500',
                                               errorText: _validate1 ? '필수 입력 사항입니다.' : null,
                                               fillColor: Colors.white,
                                               border: new OutlineInputBorder(
@@ -333,6 +338,7 @@ class _HomePageState extends State<HomePage> {
                                             keyboardType: TextInputType.number,
                                             controller: textFieldCtrl2,
                                             decoration: InputDecoration(
+                                              hintText: '5.1',
                                               errorText: _validate2 ? '필수 입력 사항입니다.' : null,
                                               fillColor: Colors.white,
                                               border: new OutlineInputBorder(
@@ -389,6 +395,7 @@ class _HomePageState extends State<HomePage> {
                                             keyboardType: TextInputType.number,
                                             controller: textFieldCtrl3,
                                             decoration: InputDecoration(
+                                              hintText: '7200',
                                               errorText: _validate3 ? '필수 입력 사항입니다.' : null,
                                               fillColor: Colors.white,
                                               border: new OutlineInputBorder(

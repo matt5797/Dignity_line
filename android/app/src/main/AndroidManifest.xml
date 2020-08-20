@@ -7,12 +7,13 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="Dignity_line"
-        android:icon="@mipmap/ic_launcher">
+        android:label="인간존엄선"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round">
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-6906871181988858~7575945029"/>
 
         <activity
             android:name=".MainActivity"

@@ -81,6 +81,7 @@ class _ResultPageState extends State<ResultPage> {
                           shrinkWrap: true,
                           children: <Widget>[
                             Card(
+                              elevation: 5,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30)),
                               child: Column(
@@ -102,6 +103,7 @@ class _ResultPageState extends State<ResultPage> {
                               ),
                             ),
                             Card(
+                              elevation: 5,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30)),
                               child: Column(
@@ -123,6 +125,7 @@ class _ResultPageState extends State<ResultPage> {
                               ),
                             ),
                             Card(
+                              elevation: 5,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30)),
                               child: Column(
@@ -144,6 +147,7 @@ class _ResultPageState extends State<ResultPage> {
                               ),
                             ),
                             Card(
+                              elevation: 5,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30)),
                               child: Column(
