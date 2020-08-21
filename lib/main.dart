@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/services.dart';
@@ -8,6 +7,7 @@ import 'package:intl/intl.dart';
 import 'datas.dart';
 import 'calcfunc.dart';
 import 'helppage.dart';
+import 'splashpage.dart';
 
 void main() {
   runApp(MyApp());
@@ -61,7 +61,11 @@ class MyApp extends StatelessWidget {
         const Locale('en', 'US'),
         const Locale('ko', 'KO'),
       ],
-      home: HomePage(),
+      //home: HomePage(),
+      home: new SplashScreen(),
+      routes: <String, WidgetBuilder>{
+        '/HomeScreen': (BuildContext context) => new HomePage()
+      },
     );
   }
 }
