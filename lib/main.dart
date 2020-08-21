@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //광고 admob 적용
     FirebaseAdMob.instance
-        .initialize(appId: 'ca-app-pub-6906871181988858~7575945029');
+        .initialize(appId: 'ca-app-pub-3940256099942544~3347511713');
     //ca-app-pub-6906871181988858~7575945029
     //ca-app-pub-3940256099942544~3347511713 // test ID
     MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(

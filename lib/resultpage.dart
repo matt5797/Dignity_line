@@ -91,7 +91,8 @@ class _ResultPageState extends State<ResultPage> {
                                       '${spot_dic[widget.d.spot]}',
                                       style: TextStyle(
                                           fontSize: 30,
-                                          color: Color(0xFF81420A)),
+                                          color: Color(0xFF81420A),
+                                        fontWeight: FontWeight.bold,),
                                       textAlign: TextAlign.center),
                                   Text(
                                       '지점',
@@ -113,7 +114,8 @@ class _ResultPageState extends State<ResultPage> {
                                       '${DateFormat.yMMMMd("ko_KO").format(widget.d.datetime)} \n~\n ${DateFormat.yMMMMd("ko_KO").format(widget.d.datetime.add(Duration(days: get_duration())))}',
                                       style: TextStyle(
                                           fontSize: 20,
-                                          color: Color(0xFF81420A)),
+                                          color: Color(0xFF81420A),
+                                        fontWeight: FontWeight.bold,),
                                       textAlign: TextAlign.center),
                                   Text(
                                       '날짜 범위',
@@ -135,7 +137,8 @@ class _ResultPageState extends State<ResultPage> {
                                       '${widget.d.discomfort == 1 ? "불쾌지수" : "기온"}',
                                       style: TextStyle(
                                           fontSize: 30,
-                                          color: Color(0xFF81420A)),
+                                          color: Color(0xFF81420A),
+                                        fontWeight: FontWeight.bold,),
                                       textAlign: TextAlign.center),
                                   Text(
                                       '지표',
@@ -157,7 +160,8 @@ class _ResultPageState extends State<ResultPage> {
                                       '${widget.d.dignity} ${widget.d.discomfort == 1 ? "DI" : "°C"}',
                                       style: TextStyle(
                                           fontSize: 30,
-                                          color: Color(0xFF81420A)),
+                                          color: Color(0xFF81420A),
+                                        fontWeight: FontWeight.bold,),
                                       textAlign: TextAlign.center),
                                   Text(
                                       '기준선',
@@ -287,6 +291,13 @@ class _ResultPageState extends State<ResultPage> {
                                             isStrokeCapRound: true,
                                             dotData: FlDotData(
                                               show: true,
+                                              getDotPainter: (spot, percent, barData, index) {
+                                                return FlDotCirclePainter(
+                                                    radius: 2,
+                                                    color: Color(0xFFFFFFFF),
+                                                    strokeWidth: 2,
+                                                    strokeColor: Color(0xFF81420A));
+                                              },
                                             ),
                                             belowBarData: BarAreaData(
                                               show: false,
@@ -301,6 +312,13 @@ class _ResultPageState extends State<ResultPage> {
                                             isStrokeCapRound: true,
                                             dotData: FlDotData(
                                               show: true,
+                                              getDotPainter: (spot, percent, barData, index) {
+                                                return FlDotCirclePainter(
+                                                    radius: 2,
+                                                    color: Color(0xFFFFFFFF),
+                                                    strokeWidth: 2,
+                                                    strokeColor: Color(0xFF81420A));
+                                              },
                                             ),
                                             belowBarData: BarAreaData(
                                               show: false,
