@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
         print("BannerAd event is $event");
       },
     );
+
     myBanner
       ..load()
       ..show(
@@ -564,6 +565,7 @@ class _HomePageState extends State<HomePage> {
                                                 setState(() {
                                                   datas.datetime =
                                                   date != null ? date : datas.datetime;
+                                                  DBHelper().set_temper_table(datas);
                                                 });
                                               });
                                             },

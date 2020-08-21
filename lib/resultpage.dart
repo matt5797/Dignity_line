@@ -63,7 +63,7 @@ class _ResultPageState extends State<ResultPage> {
         body: SafeArea(
             child: Center(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(15, 15, 15, 90),
+            padding: const EdgeInsets.fromLTRB(0, 15, 0, 90),
             child: ListView(
               children: <Widget>[
                 FutureBuilder(
@@ -177,7 +177,7 @@ class _ResultPageState extends State<ResultPage> {
                       }
                     }),
                 Card(
-                  margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
                   elevation: 5,
@@ -341,7 +341,7 @@ class _ResultPageState extends State<ResultPage> {
                         return CircularProgressIndicator();
                       } else {
                         return Card(
-                          margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                          margin: EdgeInsets.fromLTRB(10, 20, 10, 0),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
                           elevation: 5,
@@ -512,7 +512,7 @@ class _ResultPageState extends State<ResultPage> {
                         return CircularProgressIndicator();
                       } else {
                         return Card(
-                          margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                          margin: EdgeInsets.fromLTRB(10, 20, 10, 0),
                           color: Color(0xFFFFF9F1),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
