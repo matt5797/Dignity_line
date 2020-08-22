@@ -18,20 +18,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //광고 admob 적용
     FirebaseAdMob.instance
-        .initialize(appId: 'ca-app-pub-3940256099942544~3347511713');
-    //ca-app-pub-6906871181988858~7575945029
-    //ca-app-pub-3940256099942544~3347511713 // test ID
+        .initialize(appId: 'ca-app-pub-7449571046358730~5385730102');
     MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
-      keywords: <String>['flutterio', 'beautiful apps'],
-      contentUrl: 'https://flutter.io',
+      keywords: <String>['air conditioner', 'fan', 'summer'],
       childDirected: false,
       testDevices: <String>[
         'C97158959CA68CCF26AD29B523315B64'
-      ], // Android emulators are considered test devices
+      ],
     );
 
     BannerAd myBanner = BannerAd(
-      adUnitId: BannerAd.testAdUnitId,
+      adUnitId: 'ca-app-pub-7449571046358730/6507240084',
       size: AdSize.smartBanner,
       targetingInfo: targetingInfo,
       listener: (MobileAdEvent event) {
