@@ -160,9 +160,9 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Container(
-                                padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
                                     Row(
                                       children: <Widget>[
@@ -215,8 +215,9 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
+                                padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
                                     Row(
                                       children: <Widget>[
@@ -263,9 +264,9 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
-                                padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
                                     Container(
                                       child: Text("기존 사용량 (월간)",
@@ -307,9 +308,9 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
-                                padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
                                     Row(
                                       children: <Widget>[
@@ -364,9 +365,9 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
-                                padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
                                     Row(
                                       children: <Widget>[
@@ -421,9 +422,9 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
-                                padding: const EdgeInsets.all(10),
+                                padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
                                     Container(
                                       padding: const EdgeInsets.only(bottom: 8),
@@ -434,6 +435,7 @@ class _HomePageState extends State<HomePage> {
                                               color: Color(0xFF946637))),
                                     ),
                                     Container(
+                                        padding: const EdgeInsets.fromLTRB(40, 0, 0, 0),
                                         child: DropdownButton(
                                             value: datas.welfare1,
                                             items: [
@@ -472,9 +474,9 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
-                                padding: const EdgeInsets.all(10),
+                                padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
                                     Container(
                                       padding: const EdgeInsets.only(bottom: 8),
@@ -543,9 +545,9 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
-                                  padding: EdgeInsets.all(10),
+                                  padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
                                       Text('시작 날짜',
                                           style: TextStyle(
@@ -598,9 +600,9 @@ class _HomePageState extends State<HomePage> {
                                     ],
                                   )),
                               Container(
-                                padding: const EdgeInsets.all(10),
+                                padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
                                     Container(
                                       padding: const EdgeInsets.only(bottom: 8),
