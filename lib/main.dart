@@ -160,7 +160,7 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Container(
-                                padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
@@ -215,7 +215,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
-                                padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
@@ -264,7 +264,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
-                                padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
+                                padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
@@ -308,7 +308,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
-                                padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
+                                padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
@@ -365,7 +365,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
-                                padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
+                                padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
@@ -422,7 +422,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
-                                padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
+                                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
@@ -435,7 +435,7 @@ class _HomePageState extends State<HomePage> {
                                               color: Color(0xFF946637))),
                                     ),
                                     Container(
-                                        padding: const EdgeInsets.fromLTRB(40, 0, 0, 0),
+                                        padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
                                         child: DropdownButton(
                                             value: datas.welfare1,
                                             items: [
@@ -474,7 +474,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
-                                padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
@@ -545,7 +545,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
-                                  padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                                  padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
@@ -600,7 +600,7 @@ class _HomePageState extends State<HomePage> {
                                     ],
                                   )),
                               Container(
-                                padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: <Widget>[
