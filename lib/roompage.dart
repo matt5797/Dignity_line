@@ -32,12 +32,6 @@ class _RoomPageState extends State<RoomPage> with SingleTickerProviderStateMixin
     'assets/images/ondo1.png',
     'assets/images/ondo2.png'
   ];
-  List<String> man_list = [
-    'assets/images/man1.png',
-    'assets/images/man2.png',
-    'assets/images/man3.png',
-    'assets/images/man4.png',
-  ];
   List<Color> color_list = [
     Color(0xFFF73E3E),
     Color(0xFF000000),
@@ -164,9 +158,7 @@ class _RoomPageState extends State<RoomPage> with SingleTickerProviderStateMixin
                       ),
                       child: Scaffold(
                         backgroundColor: Colors.transparent,
-                        floatingActionButton: Container(
-                          margin: EdgeInsets.fromLTRB(0, 0, 0, 80),
-                          child: FloatingActionButton(
+                        floatingActionButton: FloatingActionButton(
                             onPressed: () {
                               Navigator.push(context, MaterialPageRoute<void>(
                                   builder: (BuildContext context) {
@@ -176,7 +168,6 @@ class _RoomPageState extends State<RoomPage> with SingleTickerProviderStateMixin
                             child: Icon(Icons.help),
                             backgroundColor: Color(0xFFC99E71),
                           ),
-                        ),
                         body: Padding(
                             padding: EdgeInsets.all(0),
                             child: Stack(
@@ -191,17 +182,6 @@ class _RoomPageState extends State<RoomPage> with SingleTickerProviderStateMixin
                                             fit: BoxFit.fitHeight),
                                       ),
                                     ]),
-                                Positioned(
-                                  bottom: real_height*0.15,
-                                    left: real_width*0.05,
-                                    child: Container(
-                                      //margin: EdgeInsets.fromLTRB(100, 300, 0, 0),
-                                      child: Image.asset(
-                                          man_list[man_state],
-                                          width: real_height * 0.275,
-                                          fit: BoxFit.fitWidth),
-                                    ),
-                                ),
                                 Container(
                                   alignment: Alignment.bottomCenter,
                                   child: AnimatedOpacity(

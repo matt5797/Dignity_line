@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class HelpPage extends StatefulWidget {
 
@@ -7,6 +8,42 @@ class HelpPage extends StatefulWidget {
 }
 
 class _HelpPageState extends State<HelpPage> {
+  BannerAd myBanner;
+  AdWidget adWidget;
+
+  @override
+  void initState() {
+    myBanner = BannerAd(
+      adUnitId: 'ca-app-pub-7449571046358730/6507240084',
+      size: AdSize.banner,
+      request: AdRequest(
+        testDevices: <String>[
+          'C97158959CA68CCF26AD29B523315B64'
+        ],
+      ),
+      listener: AdListener(
+        onAdLoaded: (Ad ad) {
+          print('$BannerAd loaded.');
+        },
+        onAdFailedToLoad: (Ad ad, LoadAdError error) {
+          print('$BannerAd failedToLoad: $error');
+        },
+        onAdOpened: (Ad ad) => print('$BannerAd onAdOpened.'),
+        onAdClosed: (Ad ad) => print('$BannerAd onAdClosed.'),
+        onApplicationExit: (Ad ad) => print('$BannerAd onApplicationExit.'),
+      ),
+    );
+    myBanner?.load();
+    adWidget = AdWidget(ad: myBanner);
+  }
+
+  @override
+  void dispose() {
+    myBanner?.dispose();
+    myBanner = null;
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +53,7 @@ class _HelpPageState extends State<HelpPage> {
         backgroundColor: Color(0xFF946637),
       ),
       body: ListView.builder(
-        padding: EdgeInsets.fromLTRB(10,20,10,100),
+        padding: EdgeInsets.fromLTRB(10,20,10,20),
         itemCount: vehicles.length,
         itemBuilder: (context, i) {
           return ExpansionTile(
@@ -30,6 +67,12 @@ class _HelpPageState extends State<HelpPage> {
             ],
           );
         },
+      ),
+      bottomNavigationBar: Container(
+        alignment: Alignment.center,
+        child: adWidget,
+        width: myBanner.size.width.toDouble(),
+        height: myBanner.size.height.toDouble(),
       ),
     );
   }

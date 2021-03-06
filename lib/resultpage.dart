@@ -6,6 +6,7 @@ import 'calcfunc.dart';
 import 'datas.dart';
 import 'package:intl/intl.dart';
 import 'helppage.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class ResultPage extends StatefulWidget {
   Datas d;
@@ -18,6 +19,8 @@ class ResultPage extends StatefulWidget {
 
 class _ResultPageState extends State<ResultPage> {
   final currency = NumberFormat("###,###,000", "en_US");
+  BannerAd myBanner;
+  AdWidget adWidget;
 
   int get_duration() {
     int duration = 30;
@@ -40,6 +43,39 @@ class _ResultPageState extends State<ResultPage> {
   }
 
   @override
+  void initState() {
+    myBanner = BannerAd(
+      adUnitId: 'ca-app-pub-7449571046358730/6507240084',
+      size: AdSize.banner,
+      request: AdRequest(
+        testDevices: <String>[
+          'C97158959CA68CCF26AD29B523315B64'
+        ],
+      ),
+      listener: AdListener(
+        onAdLoaded: (Ad ad) {
+          print('$BannerAd loaded.');
+        },
+        onAdFailedToLoad: (Ad ad, LoadAdError error) {
+          print('$BannerAd failedToLoad: $error');
+        },
+        onAdOpened: (Ad ad) => print('$BannerAd onAdOpened.'),
+        onAdClosed: (Ad ad) => print('$BannerAd onAdClosed.'),
+        onApplicationExit: (Ad ad) => print('$BannerAd onApplicationExit.'),
+      ),
+    );
+    myBanner?.load();
+    adWidget = AdWidget(ad: myBanner);
+  }
+
+  @override
+  void dispose() {
+    myBanner?.dispose();
+    myBanner = null;
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -47,9 +83,7 @@ class _ResultPageState extends State<ResultPage> {
           backgroundColor: Color(0xFF946637),
         ),
         backgroundColor: Color(0xFFFFEFE1),
-        floatingActionButton: Container(
-          margin: EdgeInsets.fromLTRB(0, 0, 0, 80),
-          child: FloatingActionButton(
+        floatingActionButton: FloatingActionButton(
             onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute<void>(builder: (BuildContext context) {
@@ -59,11 +93,10 @@ class _ResultPageState extends State<ResultPage> {
             child: Icon(Icons.help),
             backgroundColor: Color(0xFFC99E71),
           ),
-        ),
         body: SafeArea(
             child: Center(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(0, 15, 0, 90),
+            padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
             child: ListView(
               children: <Widget>[
                 FutureBuilder(
@@ -512,7 +545,7 @@ class _ResultPageState extends State<ResultPage> {
                         return CircularProgressIndicator();
                       } else {
                         return Card(
-                          margin: EdgeInsets.fromLTRB(10, 20, 10, 0),
+                          margin: EdgeInsets.fromLTRB(10, 20, 10, 50),
                           color: Color(0xFFFFF9F1),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
@@ -703,6 +736,13 @@ class _ResultPageState extends State<ResultPage> {
               ],
             ),
           ),
-        )));
+        )),
+      bottomNavigationBar: Container(
+        alignment: Alignment.center,
+        child: adWidget,
+        width: myBanner.size.width.toDouble(),
+        height: myBanner.size.height.toDouble(),
+      ),
+    );
   }
 }
